@@ -1,7 +1,12 @@
-import VideoThumb from "@/public/images/hero-image-01.jpg";
+"use client";
+
+import { useRouter } from "next/navigation";
+import VideoThumb from "@/public/images/industryy.jpg";
 import ModalVideo from "@/components/modal-video";
 
 export default function HeroHome() {
+  const router = useRouter();
+
   return (
     <section>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -31,6 +36,10 @@ export default function HeroHome() {
                   <a
                     className="btn group mb-4 w-full bg-linear-to-t from-orange-600 to-orange-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
                     href="#0"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      router.push("/page2");
+                    }}
                   >
                     <span className="relative inline-flex items-center">
                       Start Analysis
